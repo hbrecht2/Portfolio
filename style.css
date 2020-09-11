@@ -1,0 +1,11 @@
+html, body{
+    overflow-x: hidden;
+    margin: 0;
+    height: auto;
+}
+
+.container{
+    display: flex;
+    flex-flow: column wrap;
+    height: 100vh;
+}
