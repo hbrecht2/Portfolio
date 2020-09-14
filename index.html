@@ -5,23 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hannah Taylor</title>
 
-    <!-- External style sheet-->
+    <!-- External style sheets -->
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Source+Sans+Pro:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- JS Files-->
+    <script
+      src="https://kit.fontawesome.com/475b335362.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div class="container">
-        <canvas></canvas>
-        <div id="overlay">This div is over the canvas</div>
-      </div>
+    <div id="container" class="container">
+      <canvas></canvas>
+      <div id="overlay">
+        <div id="navLinksDiv">
+          <ul id="navLinksList">
+            <li>
+              <a class="linkText" href="#projects">PROJECTS</a> 
+              <a href="#projects"><i class="fas fa-laptop-code"></i></a> 
+            </li>
+            <li>
+              <a class="linkText" href="#contact">CONTACT ME</a> 
+              <a href="#contact"><i class="fas fa-envelope-open-text"></i></a> 
+            </li>
+            <li>
+              <a href="https://github.com/hbrecht2">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li id="linkedin">
+                <a href="https://www.linkedin.com/in/hannah-taylor-166004199/">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+          </ul>
+        </div>
 
-    <div class="container">
-      <div id="projects">These are the projects that I have worked on...</div>
+        <div id="info">
+          <img
+            id="profileImg"
+            src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg"
+          />
+          <h1 id="name" class="sectionTitle">HANNAH TAYLOR</h1>
+          <p id="description" class="subtext">
+            Hello! I am a full-stack developer looking for employment. I
+            recently graduated with a Master's degree in software development. I
+            am most confident in my full-stack web development skills, but love
+            to learn. Take a look below at some of the projects I have worked
+            on.
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="container">
-      <div id="contact">Contact Me</div>
+      <div id="projects" class="subSection">
+        <h1 class="sectionTitle">PROJECTS</h1>
+        <div class="projectListings">
+            <div>
+                Project 1 
+            </div>
+            <div>
+                Project 2 
+            </div>
+        </div>
+        <div class="homeBtn">
+            <a href="#contact"><i class="fas fa-envelope-open-text"></i></a>
+            <a href="#container"><i class="fas fa-home"></i></a>
+        </div>
+        <div class="navLabels">
+            <a href="#contact">Contact Me</a>
+            <a href="#container">Home</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="contact" class="subSection">
+        <h1 class="sectionTitle">CONTACT ME</h1>
+        <div class="homeBtn">
+            <a href="#projects"><i class="fas fa-laptop-code"></i></a>
+            <a href="#container"><i class="fas fa-home"></i></i>                
+            </a>
+        </div>
+      </div>
     </div>
 
     <script src="scripts.js"></script>

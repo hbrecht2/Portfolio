@@ -1,11 +1,131 @@
-html, body{
-    overflow-x: hidden;
-    margin: 0;
-    height: auto;
+/* Remove the x-axis scroll bar and set margin of entire document */
+html,body {
+  overflow-x: hidden;
+  margin: 0;
+  height: auto;
+    scroll-behavior: smooth;
 }
 
-.container{
-    display: flex;
-    flex-flow: column wrap;
-    height: 100vh;
+/*Container for each major section of the web app*/
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  height: 100vh;
+}
+
+/* Positioning the canvas behing the overlay div*/
+#container {
+  position: relative;
+  height: 100vh;
+}
+
+#container canvas, #overlay {
+  position: absolute;
+}
+
+#overlay{
+    width: 100%;
+}
+
+/* Navigation Links */
+#navLinksDiv{
+    margin: 0px;
+    width: 100%;
+    text-align: right;
+}
+
+#navLinksList {
+    margin: 0px;
+    padding: 0px;
+    color: #9F838C;
+    font-size: 6vw;
+    padding-right: 25px;
+    padding-top: 25px;
+    font-family: 'Source Sans Pro', sans-serif;
+    list-style-type: none;
+}
+
+li{
+    margin-bottom: 15px;
+}
+
+#navLinksList li a{
+    text-decoration: none;
+    padding: 5px 5px 0 5px;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #9F838C;
+}
+
+.linkText{
+    font-size: 2vw;
+    position: relative;
+    top: -1vw;
+}
+
+#linkedin{
+}
+
+#info{
+    position: absolute;
+}
+#profileImg {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    border: 2px white solid;
+}
+
+.sectionTitle {
+    color: #1D2D44;
+    font-family:'Raleway', sans-serif;
+    font-size: 7vw;
+    margin: 0px;
+}
+
+#name{
+    border-bottom: 4px #1D2D44 solid;
+    padding: 1px;
+}
+
+.subtext{
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+}
+
+
+.anchor{
+    position: absolute;
+    transform: translateY(-50vh);
+}
+
+.subSection{
+    text-align: center;
+}
+
+/* Styling of the nav buttons */
+.homeBtn{
+    width: 100%;
+    text-align: right;
+    font-size: 50px;
+}
+
+.homeBtn a{
+    margin-right: 10px;
+}
+
+.navLabels{
+    width: 100%;
+    text-align: right;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.navLabels a{
+    margin-right: 10px;
+    margin-right: 15px;
+    text-decoration: none;
 }
