@@ -7,15 +7,45 @@ canvas.height = window.innerHeight;
 //Create canvas drawing
 var c = canvas.getContext("2d");
 drawCanvas();
-getScale();
+setInfoDivStyle();
+setProjectSizes();
+setNavBtnPos()
 
 //Resize canvas on resize of page
 window.addEventListener("resize", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   drawCanvas();
-  getScale();
+  setInfoDivStyle();
+  setProjectSizes();
+  setNavBtnPos();
 });
+
+$('#submitBtn').click(function(e){
+      var nameCompany = $('#nameCompany').val()
+      var email = $('#email').val()
+      var subject = $('#subject').val()
+      var message = $('#message').val()
+
+      e.preventDefault();
+
+      $.ajax({
+          type: 'POST',
+          url: 'mail.php',
+          data: {nameCompany: nameCompany, email: email, subject: subject, message: message},
+          success: function (data) {
+              if(data === "1"){
+                  $('#contactFormFields')[0].reset()
+                  $('#contactFormSentMessage').text("Thank you for reaching out. I will be in touch soon.")
+                  }else{
+                      alert(data)
+                  }
+          },
+          error: function (data) {
+              alert("An error occurred while sending your message. Please try again or contact me directly at brechthl26@gmail.com.")
+          }
+      });
+})
 
 function drawCanvas() {
   //Draw Triangle Background
@@ -28,56 +58,26 @@ function drawCanvas() {
   c.fill();
 }
 
-function getScale() {
-  if (window.innerWidth > 1007) {
-    scaleElementsLg();
-    console.log("large");
-  } else if (window.innerWidth > 640 && window.innerWidth < 1007) {
-    scaleElementsMed();
-    console.log("med");
-  } else if (window.innerWidth < 641) {
-    scaleElementsSm();
-    console.log("sm");
+function setInfoDivStyle() {
+  var infoDiv = document.getElementById("info");
+  infoDiv.style.top = window.innerHeight - infoDiv.offsetHeight + "px";
+}
+
+function setProjectSizes(){
+    var projectImg = document.getElementsByClassName("projectImg");
+    for (var i=0; i<projectImg.length; i++){
+        projectImg[i].style.height = projectImg[i].offsetWidth/2 + "px";
+    }
+}
+
+
+function setNavBtnPos(){
+  var navButtonDivs = document.getElementsByClassName("pageNavigation");
+  var multiplier = 2
+  for (var i=0; i<navButtonDivs.length; i++){
+    navButtonDivs[i].style.top = window.innerHeight * multiplier - navButtonDivs[i].offsetHeight + "px";
+    multiplier += 1
   }
 }
 
-function scaleElementsLg() {
-  var infoDiv = document.getElementById("info");
-  var infoDivHeight = infoDiv.offsetHeight;
-  var windowHeight = window.innerHeight;
 
-  var topPos = windowHeight - (infoDivHeight + 50);
-
-  infoDiv.style.top = topPos + "px";
-  infoDiv.style.margin = " 0 0 0 25px"
-
-  var nameWidth = window.innerWidth * (9 / 16);
-  var nameElement = document.getElementById("name");
-  nameElement.style.width = nameWidth + "px";
-  nameElement.style.fontSize = "6.6vw";
-
-  var description = document.getElementById("description");
-  description.style.width = window.innerWidth * (5 / 7) + "px";
-  description.style.fontSize = "1.5vw";
-}
-
-function scaleElementsMed() {
-  var nameElement = document.getElementById("name");
-  nameElement.style.marginTop = window.innerHeight * (3 / 4) + "px";
-  nameElement.style.width = window.innerWidth * (3 / 5) + "px";
-  nameElement.style.fontSize = "7vw";
-
-  var description = document.getElementById("description");
-  description.style.width = window.innerWidth * (5 / 7) + "px";
-  description.style.fontSize = "2.5vw";
-}
-
-function scaleElementsSm() {
-  var nameElement = document.getElementById("name");
-  nameElement.style.marginTop = window.innerHeight * (4 / 5) + "px";
-  nameElement.style.fontSize = "8vw";
-
-  var description = document.getElementById("description");
-  description.style.width = window.innerWidth * (5 / 7) + "px";
-  description.style.fontSize = "2vw";
-}

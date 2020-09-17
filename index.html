@@ -12,11 +12,15 @@
       rel="stylesheet"
     />
 
-    <!-- JS Files-->
+    <!-- Font Awesome CDN for Icons-->
     <script
       src="https://kit.fontawesome.com/475b335362.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- JQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   </head>
   <body>
     <div id="container" class="container">
@@ -37,7 +41,7 @@
                 <i class="fab fa-github"></i>
               </a>
             </li>
-            <li id="linkedin">
+            <li>
                 <a href="https://www.linkedin.com/in/hannah-taylor-166004199/">
                     <i class="fab fa-linkedin"></i>
                 </a>
@@ -52,7 +56,7 @@
           />
           <h1 id="name" class="sectionTitle">HANNAH TAYLOR</h1>
           <p id="description" class="subtext">
-            Hello! I am a full-stack developer looking for employment. I
+            Hello! I am a full-stack developer looking for employmentin Buffalo, NY. I
             recently graduated with a Master's degree in software development. I
             am most confident in my full-stack web development skills, but love
             to learn. Take a look below at some of the projects I have worked
@@ -66,20 +70,34 @@
       <div id="projects" class="subSection">
         <h1 class="sectionTitle">PROJECTS</h1>
         <div class="projectListings">
-            <div>
-                Project 1 
+            <div class="projectDiv">
+                <h3 class="projectTitle"> Collection Connection </h3>
+                <a href="https://collectionconnection.herokuapp.com/index.php"><img class="projectImg" src="images/collectionConnectionMockUp.png"></a>
+                <div class="projectLinks">
+                    <a href="https://github.com/hbrecht2/CollectionConnectionServiceLayer"><i class="fas fa-code"></i></a>
+                    <a href="https://collectionconnection.herokuapp.com/index.php"><i class="fas fa-desktop"></i></a>
+                </div>
+                <p class="projectDescription">This dynamic web application that provides collectors with a space to file all their items. I built this using HTML5, CSS, JQuery, and PHP along with tools like Bootstrap and SASS. It is deployed on Heroku and stores user images in an AWS S3 Bucket. </p>
             </div>
-            <div>
-                Project 2 
+            <div class="projectDiv">
+              <h3 class="projectTitle"> Trivia Geek </h3>
+              <img class="projectImg" src="images/triviaGeekMockUp.png">
+              <div class="projectLinks">
+                <a href="https://github.com/hbrecht2/TriviaGeekProject"><i class="fas fa-code"></i></a>
+                <a href="https://collectionconnection.herokuapp.com/index.php"><i class="fas fa-desktop"></i></a>
+            </div>
+            <p class="projectDescription">This dynamic web application that provides collectors with a space to file all their items. I built this using HTML5, CSS, JQuery, and PHP along with tools like Bootstrap and SASS. It is deployed on Heroku and stores user images in an AWS S3 Bucket. </p>
             </div>
         </div>
-        <div class="homeBtn">
-            <a href="#contact"><i class="fas fa-envelope-open-text"></i></a>
-            <a href="#container"><i class="fas fa-home"></i></a>
-        </div>
-        <div class="navLabels">
-            <a href="#contact">Contact Me</a>
-            <a href="#container">Home</a>
+        <div class="pageNavigation">
+            <div class="homeBtn">
+                <a href="#contact"><i class="fas fa-envelope-open-text"></i></a>
+                <a href="#container"><i class="fas fa-home"></i></a>
+            </div>
+            <div class="navLabelsProjects">
+                <a href="#contact">Contact Me</a>
+                <a href="#container">Home</a>
+            </div>
         </div>
       </div>
     </div>
@@ -87,10 +105,34 @@
     <div class="container">
       <div id="contact" class="subSection">
         <h1 class="sectionTitle">CONTACT ME</h1>
-        <div class="homeBtn">
-            <a href="#projects"><i class="fas fa-laptop-code"></i></a>
-            <a href="#container"><i class="fas fa-home"></i></i>                
-            </a>
+        <p id="contactFormSentMessage"></p>        
+        <div id="contactForm">
+          <form id="contactFormFields" method="POST">
+            <label for="nameCompany">Name/Company</label>
+            <input type="text" id="nameCompany" name="nameCompany">
+
+            <label for="email">Contact Email</label>
+            <input type="email" id="email" name="email">
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject">
+        
+            <label for="message">Message</label>
+            <textarea id="message" name="message" ></textarea>
+        
+            <input id="submitBtn" type="submit" value="Submit">
+          </form>
+        </div>
+        <div class="pageNavigation">
+            <div class="homeBtn">
+                <a href="#projects"><i class="fas fa-laptop-code"></i></a>
+                <a href="#container"><i class="fas fa-home"></i></i>                
+                </a>
+            </div>
+            <div class="navLabelsContact">
+                <a href="#projects">Projects</a>
+                <a href="#container">Home</a>
+            </div>
         </div>
       </div>
     </div>
