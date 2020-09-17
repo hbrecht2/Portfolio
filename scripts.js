@@ -40,7 +40,7 @@ $('#submitBtn').click(function(e){
                   $('#contactFormFields')[0].reset()
                   $('#contactFormSentMessage').text("Thank you for reaching out. I will be in touch soon.")
                   }else{
-                      alert(data)
+                      console.log(data)
                   }
           },
           error: function (data) {
