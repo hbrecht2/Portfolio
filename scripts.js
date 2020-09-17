@@ -9,10 +9,12 @@ var c = canvas.getContext("2d");
 drawCanvas();
 setInfoDivStyle();
 setProjectSizes();
-setNavBtnPos()
+setNavBtnPos();
 
-//Resize canvas on resize of page
-window.addEventListener("resize", function () {
+var w = $(window).width();
+$(window).resize(function(){
+  if ($(window).width()==w) return; 
+  w = $(window).width();
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   drawCanvas();
